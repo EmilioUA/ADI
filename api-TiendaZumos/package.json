@@ -1,0 +1,20 @@
+{
+  "name": "tiendazumos",
+  "version": "1.0.0",
+  "description": "API de Gestión de Zumos, práctica de ADI",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "author": "Emilio Prieto Uclés",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "faker": "^5.5.3",
+    "jwt-simple": "^0.5.6",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.6"
+  }
+}

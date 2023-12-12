@@ -1,0 +1,26 @@
+Práctica 1: Implementación de APIs REST
+Emilio Prieto Uclés 48759899Z
+--------------------------------------------------------------------------------------
+
+En mi caso he utilizado Routing modular para la Implementación de los endpoints. 
+Cada router o “mini-aplicación” independiente esta en la carpeta /clases, en el archivo con su nombre.
+
+Podemos encontrar también un fichero schemas, con la definición de atributos de cada clase.
+Y verificarToken, que tiene la lógica de gestión para comprobar el Token.
+
+En cuanto a los requisitos adicionales: 
+- Implementación la persistencia del API con base de datos SQLite. Se ha usado la liberíoa sqlite3.
+Para crear la Base de datos e insertar valores con faker he creado el fichero 'initDB.js' que podemos
+ejecutar con el comando 'node ./initDB.js
+
+-Testing automatizado. Podemos encontrar en todas las peticiones scripts para testear en la pestaña 'Tests'.
+Se adjunta la colección 'ADI' de postman para poder probar los endpoints.
+
+-Se pueden subir archivos a la API. En el archivo 'server.js' podemos encontrar la ruta /fileUpload que guarda
+el fichero que recibe en la carpeta "ficheros".
+
+-Implementación del paginado en el API. Todas las peticiones listas tienen paginación basda en offset.
+Comentarios en el archivo /clase/comentario.js, asociado a la ruta /comentario/lista
+Maquinas en el archivo /clase/maquina.js, asociado a la ruta /maquina/lista
+Usuarios en el archivo /clase/usuario.js, asociado a la ruta /usuario/lista
+Zumos en el archivo /clase/zumo.js, asociado a la ruta /zumo/lista
