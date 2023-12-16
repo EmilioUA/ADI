@@ -66,6 +66,26 @@ db.serialize(() => {
   1,
 ];
 insertUsuarios.run(usuario);
+const provedor = [
+  "provedor",
+  "provedor",
+  faker.datatype.number(90),
+  "provedor@ua.es",
+  "123",
+  faker.phone.phoneNumber(),
+  3,
+];
+insertUsuarios.run(provedor);
+const admin = [
+  "Admin",
+  "Admin",
+  faker.datatype.number(90),
+  "admin@ua.es",
+  "admin",
+  faker.phone.phoneNumber(),
+  3,
+];
+insertUsuarios.run(admin);
 
  for (let i = 0; i < 10; i++) {
    const usuario = [
@@ -75,7 +95,7 @@ insertUsuarios.run(usuario);
      faker.internet.email(),
      faker.internet.password(),
      faker.phone.phoneNumber(),
-     faker.random.arrayElement([1, 2, 3]),
+     faker.random.arrayElement([1, 2]),
    ];
    insertUsuarios.run(usuario);
 

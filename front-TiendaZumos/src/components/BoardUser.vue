@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <header class="jumbotron">
+      <h1>Hola, estás en BoardUser</h1>
       <h3>{{ content }}</h3>
     </header>
   </div>

@@ -74,7 +74,7 @@ export default {
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push("/profile");
+      this.$router.push("/home");
     }
   },
   methods: {
@@ -82,7 +82,7 @@ export default {
       this.loading = true;
       try {
         await this.store.login(user)
-        this.$router.push("/profile");
+        this.$router.push("/home");
       }
       catch (error) {
           this.loading = false;

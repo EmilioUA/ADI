@@ -31,7 +31,7 @@ const jwt = require('jwt-simple');
 // Ruta para iniciar sesión
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
-  const query = 'SELECT id, nombre, email FROM usuarios WHERE email = ? AND contraseña = ?';
+  const query = 'SELECT id, nombre, email, userStatus FROM usuarios WHERE email = ? AND contraseña = ?';
   const values = [email, password];
 
   db.get(query, values, (err, row) => {
@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
             return res.status(500).json({ message: 'Error en la base de datos' });
           }
 
-          res.json({ token, userId });
+          res.json({ token, userId, userStatus: row.userStatus});
         });
       });
     } else {
