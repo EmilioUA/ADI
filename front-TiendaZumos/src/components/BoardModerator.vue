@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <header class="jumbotron">
-      <h1>Hola, estás en BoardModerator</h1>
+      <h1>Hola, estás en maquinas</h1>
       <h3>{{ content }}</h3>
     </header>
   </div>
 </template>
 
 <script>
-import UserService from "../services/user.service";
+import UserService from "../services/maquina.service";
 
 export default {
   name: "Moderator",
@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getModeratorBoard().then(
+    UserService.getMaquinas().then(
       (response) => {
         this.content = response.data;
       },

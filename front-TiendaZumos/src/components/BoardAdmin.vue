@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getAdminBoard().then(
+    UserService.getUsuarios().then(
       (response) => {
         this.content = response.data;
       },

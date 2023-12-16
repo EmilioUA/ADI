@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <header class="jumbotron">
-      <h1>Hola, estás en Home</h1>
+      <h1>Hola, estás en Zumos</h1>
       <h3>{{ content }}</h3>
     </header>
   </div>
 </template>
 
 <script>
-import UserService from "../services/user.service";
+import UserService from "../services/zumos.service";
 
 export default {
   name: "Home",

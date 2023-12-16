@@ -33,7 +33,7 @@ export const useAuthStore = defineStore('auth', {
       var response = await AuthService.register(user)
       try {
         this.status.loggedIn = false;
-        return response.data;
+        return response;
       }
       catch(error) {
         this.status.loggedIn = false;

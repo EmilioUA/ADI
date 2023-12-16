@@ -1,10 +1,10 @@
-const API_URL = 'http://localhost:3000/login';
+const API_URL = 'http://localhost:3000/';
 
 class AuthService {
   async login(user) {
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(API_URL + 'login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,15 +34,19 @@ class AuthService {
 
   async register(user) {
     try {
-      const response = await fetch(API_URL + 'signup', {
+      const response = await fetch(API_URL + 'usuario', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: user.username,
+          nombre: user.username,
+          apellidos: user.apellidos,
           email: user.email,
-          password: user.password,
+          contraseña: user.password,
+          edad: user.edad,
+          telefono: user.phone,
+          userStatus: 1,
         }),
       });
 

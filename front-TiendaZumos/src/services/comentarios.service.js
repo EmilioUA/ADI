@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { authHeader, getUserId } from './auth-header';
 
-const API_URL = 'http://localhost:3000/usuario/';
+const API_URL = 'http://localhost:3000/comentario/';
 
 class UserService {
-  getUsuarios() {
+  getComentarios() {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 

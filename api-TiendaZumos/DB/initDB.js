@@ -73,7 +73,7 @@ const provedor = [
   "provedor@ua.es",
   "123",
   faker.phone.phoneNumber(),
-  3,
+  2,
 ];
 insertUsuarios.run(provedor);
 const admin = [

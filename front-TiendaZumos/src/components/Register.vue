@@ -9,9 +9,14 @@
       <Form @submit="handleRegister" :validation-schema="schema">
         <div v-if="!successful">
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Nombre</label>
             <Field name="username" type="text" class="form-control" />
             <ErrorMessage name="username" class="error-feedback" />
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <Field name="apellidos" type="text" class="form-control" />
+            <ErrorMessage name="apellidos" class="error-feedback" />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -19,9 +24,19 @@
             <ErrorMessage name="email" class="error-feedback" />
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Contraseña</label>
             <Field name="password" type="password" class="form-control" />
             <ErrorMessage name="password" class="error-feedback" />
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <Field name="edad" type="number" class="form-control" />
+            <ErrorMessage name="edad" class="error-feedback" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefono</label>
+            <Field name="phone" type="phone" class="form-control" />
+            <ErrorMessage name="phone" class="error-feedback" />
           </div>
 
           <div class="form-group">
@@ -101,29 +116,34 @@ export default {
     }
   },
   methods: {
-    async handleRegister(user) {
-      this.message = "";
-      this.successful = false;
-      this.loading = true;
+  async handleRegister(user) {
+    this.message = "";
+    this.successful = false;
+    this.loading = true;
 
-      try {
-        var data = await this.store.register(user)
-        this.message = data.message;
-        this.successful = true;
-        this.loading = false;
-      } 
-      catch(error) {
-        this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-        this.successful = false;
-        this.loading = false;
+    try {
+      var data = await this.store.register(user);
+      console.log(data);
+      this.message = data.message;
+      this.successful = true;
+      this.loading = false;
+
+      if (this.successful) {
+        this.$router.push("/login");
       }
+    } catch (error) {
+      this.message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      this.successful = false;
+      this.loading = false;
     }
-  },
+  }
+},
+
 };
 </script>
 
