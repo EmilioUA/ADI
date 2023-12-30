@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import UserService from "../services/comentarios.service";
+import ComentarioStore from "../stores/comentarios.store";
 
 export default {
   name: "Comentarios",
@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getComentarios().then(
+    ComentarioStore.getComentarios().then(
       (response) => {
         this.content = response.data;
       },

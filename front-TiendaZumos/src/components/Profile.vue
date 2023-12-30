@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import UserService from "../services/user.service";
+import UserService from "../stores/user.store";
 
 export default {
   name: "User",

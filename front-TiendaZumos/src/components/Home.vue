@@ -2,13 +2,27 @@
   <div class="container">
     <header class="jumbotron">
       <h1>Hola, estás en Zumos</h1>
-      <h3>{{ content }}</h3>
     </header>
+    <v-table fixed-header height="300px" theme="dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="zumo in content.Zumos" :key="zumo.id">
+          <td>{{ zumo.id }}</td>
+          <td>{{ zumo.tipo }}</td>
+          <td>{{ zumo.descripcion }}</td>
+        </tr>
+      </tbody>
+    </v-table>
   </div>
 </template>
-
 <script>
-import UserService from "../services/zumos.service";
+import ZumoService from "../stores/zumos.store";
 
 export default {
   name: "Home",
@@ -18,7 +32,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getPublicContent().then(
+    ZumoService.getPublicContent().then(
       (response) => {
         this.content = response.data;
       },

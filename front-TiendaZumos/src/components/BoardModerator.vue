@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import UserService from "../services/maquina.service";
+import MaquinaStore from "../stores/maquina.store";
 
 export default {
   name: "Moderator",
@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getMaquinas().then(
+    MaquinaStore.getMaquinas().then(
       (response) => {
         this.content = response.data;
       },

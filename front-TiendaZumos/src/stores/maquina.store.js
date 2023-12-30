@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { authHeader, getUserId } from './auth-header';
+import { authHeader, getUserId } from '../services/auth-header';
 
-const API_URL = 'http://localhost:3000/zumo/';
+const API_URL = 'http://localhost:3000/maquina/';
 
-class UserService {
-  getPublicContent() {
+class MaquinaStore {
+  getMaquinas() {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 
@@ -22,4 +22,4 @@ class UserService {
 
 }
 
-export default new UserService();
+export default new MaquinaStore();

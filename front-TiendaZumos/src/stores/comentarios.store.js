@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { authHeader, getUserId } from './auth-header';
+import { authHeader, getUserId } from '../services/auth-header';
 
 const API_URL = 'http://localhost:3000/comentario/';
 
-class UserService {
+class ComentarioStore {
   getComentarios() {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
@@ -22,4 +22,4 @@ class UserService {
 
 }
 
-export default new UserService();
+export default new ComentarioStore();

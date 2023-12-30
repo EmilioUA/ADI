@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import UserService from "../services/user.service";
+import UserStore from "../stores/user.store";
 
 export default {
   name: "Admin",
@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    UserService.getUsuarios().then(
+    UserStore.getUsuarios().then(
       (response) => {
         this.content = response.data;
       },
