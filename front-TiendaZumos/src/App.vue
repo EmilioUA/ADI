@@ -6,10 +6,10 @@
           <router-link to="/home" class="nav-link"> Zumos</router-link>
         </li>
         <li v-if="showAdminBoard" class="nav-item">
-          <router-link to="/admin" class="nav-link"> Admin Board</router-link>
+          <router-link to="/usuario" class="nav-link"> Usuarios</router-link>
         </li>
         <li v-if="showModeratorBoard" class="nav-item">
-          <router-link to="/mod" class="nav-link"> Moderator Board</router-link>
+          <router-link to="/maquina" class="nav-link"> Maquinas</router-link>
         </li>
         <li class="nav-item">
           <router-link v-if="currentUser" to="/comentarios" class="nav-link"> Comentarios</router-link>

@@ -8,18 +8,13 @@ class ZumosStore {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 
-  getUserBoard() {
-    return axios.get(API_URL + getUserId(), { headers: authHeader() });
+  deleteZumo(zumoId) {
+    return axios.delete(API_URL + zumoId, { headers: authHeader() });
   }
 
-  getModeratorBoard() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() });
+  createZumo(zumo){
+    return axios.post(API_URL, zumo, { headers: authHeader() });
   }
-
-  getAdminBoard() {
-    return axios.get(API_URL + 'admin', { headers: authHeader() });
-  }
-
 }
 
 export default new ZumosStore();

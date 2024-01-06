@@ -8,18 +8,21 @@ class ComentarioStore {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 
-  getUserBoard() {
-    return axios.get(API_URL + getUserId(), { headers: authHeader() });
+  deleteComentario(comentarioId) {
+    return axios.delete(API_URL + comentarioId,  { headers: authHeader() });
   }
 
-  getModeratorBoard() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() });
+  getComentario(comentarioId) {
+    return axios.get(API_URL + comentarioId, { headers: authHeader() });
   }
 
-  getAdminBoard() {
-    return axios.get(API_URL + 'admin', { headers: authHeader() });
+  createComentario(comentario){
+    return axios.post(API_URL, comentario, { headers: authHeader() });
   }
 
+  updateComentario(comentario){
+    return axios.patch(API_URL + comentario.id, comentario, { headers: authHeader() });
+  }
 }
 
 export default new ComentarioStore();

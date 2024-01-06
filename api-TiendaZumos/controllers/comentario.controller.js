@@ -29,7 +29,7 @@ exports.createComentario = (req, res) => {
 
 exports.getComentariosLista = (req, res) => {
     const page = parseInt(req.query.page) || 1;
-  const resultsPerPage = parseInt(req.query.resultsPerPage) || 5;
+  const resultsPerPage = parseInt(req.query.resultsPerPage) || 100;
   const startIndex = (page - 1) * resultsPerPage;
 
   const query = db.prepare('SELECT * FROM comentarios LIMIT ? OFFSET ?');

@@ -71,7 +71,7 @@ const provedor = [
   "provedor",
   faker.datatype.number(90),
   "provedor@ua.es",
-  "123",
+  "provedor",
   faker.phone.phoneNumber(),
   2,
 ];
@@ -87,7 +87,7 @@ const admin = [
 ];
 insertUsuarios.run(admin);
 
- for (let i = 0; i < 10; i++) {
+ for (let i = 0; i < 100; i++) {
    const usuario = [
      faker.name.firstName(),
      faker.name.lastName(),

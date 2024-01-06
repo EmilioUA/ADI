@@ -8,18 +8,21 @@ class UserStore {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 
-  getUserBoard() {
+  getUser() {
     return axios.get(API_URL + getUserId(), { headers: authHeader() });
   }
 
-  getModeratorBoard() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() });
+  deleteUsuario(userId) {
+    return axios.delete(API_URL + userId,  { headers: authHeader() });
   }
 
-  getAdminBoard() {
-    return axios.get(API_URL + 'admin', { headers: authHeader() });
+  getusuario(usuarioId){
+    return axios.get(API_URL + usuarioId, { headers: authHeader() });
   }
 
+  updateUsuario(usuario){
+    return axios.put(API_URL + usuario.id, usuario, { headers: authHeader() });
+  }
 }
 
 export default new UserStore();

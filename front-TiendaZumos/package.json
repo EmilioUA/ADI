@@ -21,6 +21,8 @@
     "vee-validate": "^4.3.5",
     "vue": "^3.2.41",
     "vue-router": "^4.0.6",
+    "vuejs-paginator": "^2.0.2",
+    "vuetify": "^3.4.9",
     "vuex": "^4.0.0",
     "yup": "^0.32.9"
   },

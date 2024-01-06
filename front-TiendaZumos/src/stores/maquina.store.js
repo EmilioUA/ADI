@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { authHeader, getUserId } from '../services/auth-header';
+import { authHeader } from '../services/auth-header';
 
 const API_URL = 'http://localhost:3000/maquina/';
 
@@ -8,18 +8,21 @@ class MaquinaStore {
     return axios.get(API_URL + 'lista', { headers: authHeader() });
   }
 
-  getUserBoard() {
-    return axios.get(API_URL + getUserId(), { headers: authHeader() });
+  deleteMaquina(maquinaId) {
+    return axios.delete(API_URL + maquinaId,  { headers: authHeader() });
   }
 
-  getModeratorBoard() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() });
+  getMaquina(maquinaId){
+    return axios.get(API_URL + maquinaId, { headers: authHeader() });
   }
 
-  getAdminBoard() {
-    return axios.get(API_URL + 'admin', { headers: authHeader() });
+  createMaquina(maquina){
+    return axios.post(API_URL, maquina, { headers: authHeader() });
   }
 
+  updateMaquina(maquina){
+    return axios.put(API_URL + maquina.id, maquina, { headers: authHeader() });
+  }
 }
 
 export default new MaquinaStore();
